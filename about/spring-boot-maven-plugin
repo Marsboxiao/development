@@ -1,1 +1,27 @@
+######spring-boot-maven-plugin导入不成功的问题，这个主要是因为maven中缺少对spring-boot-maven-plugin的支持，
+修改方法为修改maven仓库里面的settings文件，在<profiles></profiles>中添加
+<profile>
+      <id>spring plugins</id>
+      <activation>
+        <jdk>spring plugins</jdk>
+      </activation>
+      <pluginRepositories>
+        <pluginRepository>
+          <id>spring plugins</id>
+          <name>Spring plugins</name>
+          <url>https://maven.aliyun.com/repository/spring-plugin</url>
+          <layout>default</layout>
+          <snapshotPolicy>always</snapshotPolicy>
+        </pluginRepository>
+      </pluginRepositories>
+</profile>
+然后在pom.xml里添加版本号，如下段语句
+<plugins>
+      <plugin>
+         <groupId>org.springframework.boot</groupId>
+         <artifactId>spring-boot-maven-plugin</artifactId>
+         <version>2.1.8.RELEASE</version>
+      </plugin>
+</plugins>
+然后再编译就可以了。
 
