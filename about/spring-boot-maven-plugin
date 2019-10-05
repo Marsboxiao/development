@@ -1,4 +1,4 @@
-######spring-boot-maven-plugin导入不成功的问题，这个主要是因为maven中缺少对spring-boot-maven-plugin的支持，
+spring-boot-maven-plugin导入不成功的问题，这个主要是因为maven中缺少对spring-boot-maven-plugin的支持，
 修改方法为修改maven仓库里面的settings文件，在<profiles></profiles>中添加
 <profile>
       <id>spring plugins</id>
